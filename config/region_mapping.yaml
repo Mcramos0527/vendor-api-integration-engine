@@ -1,0 +1,36 @@
+# Region Mapping Configuration
+# Maps business regions to entity codes and country lists.
+
+regions:
+  DACH:
+    entity_code: "1000"
+    countries: ["DE", "AT", "CH"]
+    timezone: "Europe/Berlin"
+  UKI:
+    entity_code: "2000"
+    countries: ["GB", "IE"]
+    timezone: "Europe/London"
+  NORDICS:
+    entity_code: "3000"
+    countries: ["SE", "NO", "DK", "FI"]
+    timezone: "Europe/Stockholm"
+  IBERIA:
+    entity_code: "4000"
+    countries: ["ES", "PT"]
+    timezone: "Europe/Madrid"
+  FRANCE:
+    entity_code: "5000"
+    countries: ["FR"]
+    timezone: "Europe/Paris"
+  BENELUX:
+    entity_code: "6000"
+    countries: ["NL", "BE", "LU"]
+    timezone: "Europe/Amsterdam"
+  ITALY:
+    entity_code: "7000"
+    countries: ["IT"]
+    timezone: "Europe/Rome"
+  EASTERN_EUROPE:
+    entity_code: "8000"
+    countries: ["PL", "CZ", "HU", "RO"]
+    timezone: "Europe/Warsaw"

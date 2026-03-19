@@ -1,0 +1,37 @@
+# Currency Logic Configuration
+# Defines default and allowed currencies per region.
+# Adjustable based on business decisions.
+
+regions:
+  DACH:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR"]
+    decimal_places: 2
+  UKI:
+    default_currency: "GBP"
+    allowed_currencies: ["GBP", "EUR"]
+    decimal_places: 2
+  NORDICS:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR", "SEK", "NOK", "DKK"]
+    decimal_places: 2
+  IBERIA:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR"]
+    decimal_places: 2
+  FRANCE:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR"]
+    decimal_places: 2
+  BENELUX:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR"]
+    decimal_places: 2
+  ITALY:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR"]
+    decimal_places: 2
+  EASTERN_EUROPE:
+    default_currency: "EUR"
+    allowed_currencies: ["EUR", "PLN", "CZK", "HUF"]
+    decimal_places: 2

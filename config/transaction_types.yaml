@@ -1,0 +1,17 @@
+# Transaction Type Configuration
+# Maps fulfilment types to ERP document types.
+# Modifiable without code changes — restart the service to reload.
+
+types:
+  DUAL:
+    erp_type: "ZKE"
+    description: "Dual fulfillment — stock and drop-ship combined"
+    requires_warehouse: true
+  DIRECT:
+    erp_type: "ZKA"
+    description: "Direct fulfillment — vendor ships to end customer"
+    requires_warehouse: false
+  STANDARD:
+    erp_type: "ZOR"
+    description: "Standard order processing"
+    requires_warehouse: true

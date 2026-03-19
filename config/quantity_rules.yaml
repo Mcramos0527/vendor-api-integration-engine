@@ -1,0 +1,7 @@
+# Quantity Validation Rules
+# Defines quantity thresholds for order processing.
+
+max_single_order: 99999
+min_quantity: 1
+bulk_threshold: 1000
+bulk_requires_approval: true

@@ -27,7 +27,6 @@
 - [Project Structure](#project-structure)
 - [Roadmap](#roadmap)
 - [WebMethods iPaaS — Technical Requirements Specification](#webmethods-ipaas--technical-requirements-specification)
- 
 ---
  
 ## Overview
@@ -59,7 +58,6 @@ Ship & Debit is a vendor pricing program used widely in technology distribution.
 2. The distributor **ships the product at standard price** to the reseller
 3. After shipment, the distributor **claims the difference** (the "debit") back from the vendor based on the approved special price
 4. The claim is only valid if a **Unique Approval Number (UAN)** exists in SAP — created from the vendor's pricing record
- 
 Without automation, every pricing record had to be manually entered into SAP to create the UAN. This process was the bottleneck.
  
 ### Impact Before vs. After
@@ -189,7 +187,6 @@ This is the complete pipeline from vendor pricing record to SAP UAN creation:
 - Python 3.10+
 - pip or poetry
 - Docker (optional)
- 
 ### Installation
  
 ```bash
@@ -260,7 +257,6 @@ curl -X POST http://localhost:8000/v1.0/sales/special_bid/by_contract/catalog \
  
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`
- 
 ---
  
 ## Business Logic
@@ -280,7 +276,6 @@ A UAN is only valid if:
 - The composite key is unique — no duplicate UAN for the same customer/product/price
 - The partner reference is valid — reseller exists in SAP as a registered partner
 - The pricing record falls within the active validity period
- 
 ### Composite Key Deduplication
  
 Each incoming record is checked against a composite key to prevent duplicate UAN creation:
@@ -297,7 +292,6 @@ If a duplicate is detected, the record is discarded silently and logged — no I
 SAP IDoc processing for Ship & Debit requires a two-phase commit:
 1. **Phase 1 (INITIAL=True)** — Creates the base IDoc and price list structure in ZO_SD_LIST
 2. **Phase 2 (INITIAL=False)** — Finalises and activates the UAN
- 
 ### WE02 Status Reference
  
 After IDoc delivery, operations teams monitor status in SAP transaction WE02:
@@ -406,7 +400,6 @@ vendor-api-integration-engine/
 - [ ] Batch processing endpoint for bulk Ship & Debit imports
 - [ ] Redis caching layer for deduplication
 - [ ] Monitoring dashboard — real-time UAN creation rate and IDoc status
- 
 ---
  
 ---
@@ -440,7 +433,6 @@ WebMethods sits between the FastAPI application engine and the SAP ERP system, r
 - Handling errors, retries, and Dead Letter Queue management
 - Delivering IDocs to SAP for ZO_SD_LIST processing and UAN creation
 - Providing audit logging for every message processed
- 
 ### 1.1 Intended Audience
  
 - Business System Analysts reviewing integration architecture
@@ -448,14 +440,12 @@ WebMethods sits between the FastAPI application engine and the SAP ERP system, r
 - IT delivery teams responsible for WebMethods configuration
 - SAP Basis team responsible for IDoc port setup
 - Business stakeholders reviewing Ship & Debit automation design
- 
 ### 1.2 Out of Scope
  
 - WebMethods server installation and licensing
 - SAP Basis configuration for IDoc port setup and ZO_SD_LIST
 - Network firewall and security configuration
 - End-user training on WE02 monitoring
- 
 ---
  
 ## TRS-2 · Business Context & Justification
@@ -500,7 +490,6 @@ The Ship & Debit pipeline requires reliable, traceable delivery of pricing recor
 - No multi-instance routing capability
 - No centralised integration monitoring
 - Tight coupling between FastAPI and SAP
- 
 ---
  
 ## TRS-4 · Future State Architecture (To-Be)
@@ -610,7 +599,6 @@ WebMethods must route messages to the correct SAP ECC instance based on business
 - Routing rules must be configurable **without code deployment**
 - Rules must be version-controlled in WebMethods IS packages
 - New routing targets must be addable without modifying core pipeline
- 
 ---
  
 ### FR-04 · Protocol Transformation `[MUST]`
@@ -868,4 +856,4 @@ Enterprise systems integration specialist with 10+ years across SAP ECC environm
  
 ## License
  
-MIT License — see [LICENSE](LICENSE) for details
+MIT License — see [LICENSE](LICENSE) for details.

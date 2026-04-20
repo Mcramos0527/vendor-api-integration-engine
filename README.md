@@ -1,7 +1,6 @@
 # Vendor API Integration Engine
  
-> Enterprise-grade API middleware implementing a full Ship & Debit vendor pricing pipeline — from external vendor API through WebMethods iPaaS, SAP IDoc ingestion, ZO_SD_LIST price list creation, and Unique Approval Number (UAN) generation.
- 
+
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -35,17 +34,7 @@
  
 Built to handle **multi-region enterprise operations** across 18+ countries, multiple currencies, and fulfillment models — eliminating 40+ hours/week of manual ERP data entry across EMEA.
  
-> **BA Context**
->
-> This project was designed following a real enterprise integration pattern delivered at **TD SYNNEX**, where I acted as the **Business System Analyst** responsible for:
-> - Defining the end-to-end integration requirements across vendor API, WebMethods, SAP SD, and IDoc layers
-> - Facilitating As-Is / To-Be process discovery workshops with EMEA Finance, Sales Operations, and IT stakeholders
-> - Documenting field mapping specifications, trigger logic, error handling, and acceptance criteria for engineering handoff
-> - Coordinating delivery between internal IT, SAP Basis team, and external vendor technical teams
-> - Defining the ZO_SD_LIST price list creation logic and UAN generation business rules
->
-> The architecture and WebMethods specification reflect real decisions made in a production enterprise environment supporting Ship & Debit operations across EMEA.
- 
+
 ---
  
 ## Business Context — Ship & Debit
